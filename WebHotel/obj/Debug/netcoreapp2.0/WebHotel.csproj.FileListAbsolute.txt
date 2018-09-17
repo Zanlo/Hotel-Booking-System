@@ -1,0 +1,12 @@
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.deps.json
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.runtimeconfig.json
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.runtimeconfig.dev.json
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.dll
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.pdb
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.csprojAssemblyReference.cache
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.csproj.CoreCompileInputs.cache
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfoInputs.cache
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfo.cs
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.dll
+C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.pdb
