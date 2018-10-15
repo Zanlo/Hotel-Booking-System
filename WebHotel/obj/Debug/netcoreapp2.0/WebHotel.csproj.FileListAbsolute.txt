@@ -10,3 +10,15 @@ C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\Web
 C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfo.cs
 C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.dll
 C:\Users\Joshua\Desktop\WebSysProj\WebHotel\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.pdb
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.deps.json
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.runtimeconfig.json
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.runtimeconfig.dev.json
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.dll
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.pdb
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.csprojAssemblyReference.cache
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.csproj.CoreCompileInputs.cache
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfoInputs.cache
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfo.cs
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.dll
+C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.pdb
