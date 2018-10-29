@@ -13266,11 +13266,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\uxmal\\Dropbox\\1WSU\\semester8\\Web Systems Development\\Group_Assignment\\Websystems\\WebHotel\\WebHotel.csproj",
+      "projectUniqueName": "C:\\Users\\uxmal\\Dropbox\\1WSU\\semester8\\Web Systems Development\\_group\\Websystems\\WebHotel\\WebHotel.csproj",
       "projectName": "WebHotel",
-      "projectPath": "C:\\Users\\uxmal\\Dropbox\\1WSU\\semester8\\Web Systems Development\\Group_Assignment\\Websystems\\WebHotel\\WebHotel.csproj",
+      "projectPath": "C:\\Users\\uxmal\\Dropbox\\1WSU\\semester8\\Web Systems Development\\_group\\Websystems\\WebHotel\\WebHotel.csproj",
       "packagesPath": "C:\\Users\\uxmal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\uxmal\\Dropbox\\1WSU\\semester8\\Web Systems Development\\Group_Assignment\\Websystems\\WebHotel\\obj\\",
+      "outputPath": "C:\\Users\\uxmal\\Dropbox\\1WSU\\semester8\\Web Systems Development\\_group\\Websystems\\WebHotel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
