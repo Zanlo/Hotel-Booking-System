@@ -17,7 +17,7 @@ namespace WebHotel.Data
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
             // Include your role names here
-            string[] roleNames = { "Admin", "Moviegoers" };
+            string[] roleNames = { "Admin", "Customers" };
             IdentityResult roleResult;
 
             foreach (var roleName in roleNames)
