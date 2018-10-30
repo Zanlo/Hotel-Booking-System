@@ -90,9 +90,12 @@ namespace WebHotel.Controllers
 
             if (userID == null)
             {
-                return View();
+                return View("~/Views/Customers/MyDetails/Create.cshtml",user);
             }
-            return View();
+            else
+            {
+                return View("~/Views/Customers/MyDetails/Update.cshtml",user);
+            }
         }
 
         // POST: Customers/Edit/5
