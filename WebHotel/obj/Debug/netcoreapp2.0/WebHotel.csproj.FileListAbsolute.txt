@@ -29,7 +29,6 @@ C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebH
 C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.pdb
 C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.csprojAssemblyReference.cache
 C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.csproj.CoreCompileInputs.cache
-C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfoInputs.cache
 C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfo.cs
 C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.dll
