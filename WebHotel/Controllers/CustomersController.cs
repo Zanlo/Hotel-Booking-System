@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebHotel.Data;
 using WebHotel.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebHotel.Controllers
 {
@@ -79,6 +81,21 @@ namespace WebHotel.Controllers
                 return NotFound();
             }
             return View(customer);
+        }
+
+        public async Task<IActionResult> MyDetails()
+        {
+            var user = User.FindFirst(ClaimTypes.Name).Value;
+            var userID = _context.Customer.FindAsync(user);
+
+            if (userID == null)
+            {
+                return View("~/Views/Customers/MyDetails/Create.cshtml",user);
+            }
+            else
+            {
+                return View("~/Views/Customers/MyDetails/Update.cshtml",user);
+            }
         }
 
         // POST: Customers/Edit/5

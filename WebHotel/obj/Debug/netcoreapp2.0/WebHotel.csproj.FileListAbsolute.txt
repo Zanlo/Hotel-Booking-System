@@ -22,3 +22,14 @@ C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\W
 C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfo.cs
 C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.dll
 C:\Users\uxmal\Dropbox\1WSU\semester8\Web Systems Development\Group_Assignment\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.pdb
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.deps.json
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.runtimeconfig.json
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.runtimeconfig.dev.json
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.dll
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\bin\Debug\netcoreapp2.0\WebHotel.pdb
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.csprojAssemblyReference.cache
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.csproj.CoreCompileInputs.cache
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfoInputs.cache
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.AssemblyInfo.cs
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.dll
+C:\Users\aussi\Documents\GitHub\Websystems\WebHotel\obj\Debug\netcoreapp2.0\WebHotel.pdb
