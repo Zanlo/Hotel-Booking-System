@@ -30,16 +30,34 @@
             @Html.DisplayFor(model => model.Cost)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TheCustomer)
+            Customer Surname
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.TheCustomer.Email)
+            @Html.DisplayFor(model => model.TheCustomer.Surname)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TheRoom)
+            Customer First Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TheCustomer.GivenName)
+        </dd>
+        <dt>
+            Room ID
         </dt>
         <dd>
             @Html.DisplayFor(model => model.TheRoom.ID)
+        </dd>
+        <dt>
+            Bed Count
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TheRoom.BedCount)
+        </dd>
+        <dt>
+            Room Level
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TheRoom.Level)
         </dd>
     </dl>
     
