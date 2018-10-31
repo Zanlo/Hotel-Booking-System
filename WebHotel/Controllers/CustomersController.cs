@@ -31,11 +31,11 @@ namespace WebHotel.Controllers
             if (customer == null)
             {
                 customer = new Customer { Email = _email };
-                return View("~/Views/Customers/MyDetailsCreate.cshtml", customer);
+                return View("~/Views/MyDetailsCreate.cshtml", customer);
             }
             else
             {
-                return View("~/Views/Customers/MyDetailsUpdate.cshtml", customer);
+                return View("~/Views/MyDetailsUpdate.cshtml", customer);
             }
         }
 
@@ -51,7 +51,7 @@ namespace WebHotel.Controllers
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
 
-                return View("~/Views/Customers/MyDetailsSuccess.cshtml", customer);
+                return View("~/Views/MyDetailsSuccess.cshtml", customer);
             }
             return View(customer);
         }
@@ -65,7 +65,7 @@ namespace WebHotel.Controllers
                 _context.Update(customer);
                 await _context.SaveChangesAsync();
 
-                return View("~/Views/Customers/MyDetailsSuccess.cshtml", customer);
+                return View("~/Views/MyDetailsSuccess.cshtml", customer);
             }
             return View(customer);
         }
