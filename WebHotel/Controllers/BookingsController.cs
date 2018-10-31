@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -20,7 +21,39 @@ namespace WebHotel.Controllers
             _context = context;
         }
 
+        [Authorize(Roles ="Customers")]
+        public async Task<IActionResult> CIndex(string sortOrder)
+        {
+            //var applicationDbContext = _context.Booking.Include(b => b.TheCustomer).Include(b => b.TheRoom);
+            var book = (IQueryable<Booking>)_context.Booking.Include(x => x.TheCustomer).Include(x => x.TheRoom);
+
+            switch (sortOrder)
+            {
+                case "checkin_asc":
+                    book = book.OrderBy(m => m.CheckIn);
+                    break;
+                case "checkin_desc":
+                    book = book.OrderByDescending(m => m.CheckIn);
+                    break;
+                case "cost_asc":
+                    book = book.OrderBy(m => m.Cost);
+                    break;
+                case "cost_desc":
+                    book = book.OrderByDescending(m => m.Cost);
+                    break;
+
+            }
+
+            ViewData["NextCheckinOrder"] = sortOrder != "checkin_asc" ? "checkin_asc" : "checkin_desc";
+            ViewData["NextCostOrder"] = sortOrder != "cost_asc" ? "cost_asc" : "cost_desc";
+
+            ViewBag.User = User.FindFirst(ClaimTypes.Name).Value;
+            return View(await book.AsNoTracking().ToListAsync());
+            //return View(await applicationDbContext.ToListAsync());
+        }
+
         // GET: Bookings
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Booking.Include(b => b.TheCustomer).Include(b => b.TheRoom);
@@ -73,7 +106,7 @@ namespace WebHotel.Controllers
             return View(booking);
         }
 
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Stats(CustomerStats s)
         {
             var postGroups = _context.Customer.GroupBy(m => m.Postcode);

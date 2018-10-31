@@ -4,15 +4,34 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-@if (SignInManager.IsSignedIn(User))
+@if (User.IsInRole("Customers"))
 {
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
 
         <ul class="nav navbar-nav navbar-right">
             <li><a asp-area="" asp-controller="Customers" asp-action="MyDetails">My Details</a></li>
-            <li><a asp-area="" asp-controller="Rooms" asp-action="Search">Find a Room</a></li>
+            <li><a asp-area="" asp-controller="Rooms" asp-action="Search">Search Rooms</a></li>
             <li><a asp-area="" asp-controller="Rooms" asp-action="Book">Book a Room</a></li>
-            <li><a asp-area="" asp-controller="Rooms" asp-action="MyBookings">My Bookings</a></li>
+            <li><a asp-area="" asp-controller="Bookings" asp-action="CIndex">My Bookings</a></li>
+            <li>
+                <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+            </li>
+
+        </ul>
+    </form>
+}
+else if (User.IsInRole("Admin"))
+{
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a asp-area="" asp-controller="Bookings" asp-action="Index">Manage Bookings</a></li>
+            <li><a asp-area="" asp-controller="Bookings" asp-action="Stats">Statistics</a></li>
+
             <li>
                 <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
 

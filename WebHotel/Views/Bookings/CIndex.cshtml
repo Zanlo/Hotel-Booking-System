@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebHotel.Models.Booking>
+@{
+    ViewData["Title"] = "Customer Index";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="CIndex" asp-route-sortorder="@ViewData["NextCheckinOrder"]">
+                    @Html.DisplayNameFor(model => model.CheckIn)
+                </a>
+
+            </th>
+            <th>
+                <a asp-action="CIndex" asp-route-sortorder="@ViewData["NextCostOrder"]">
+                    @Html.DisplayNameFor(model => model.Cost)
+                </a>
+            </th>      
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @if (ViewBag.User == item.CustomerEmail)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CheckIn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

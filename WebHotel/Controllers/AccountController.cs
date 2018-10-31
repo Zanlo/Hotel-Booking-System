@@ -206,7 +206,7 @@ namespace WebHotel.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Register(string returnUrl = "Customers/MyDetails")
+        public IActionResult Register(string returnUrl = "/Customers/MyDetails")
         {
             ViewData["ReturnUrl"] = returnUrl;
             return View();
