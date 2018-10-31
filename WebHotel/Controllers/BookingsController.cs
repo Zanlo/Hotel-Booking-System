@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebHotel.Data;
+using Microsoft.AspNetCore.Authorization;
 using WebHotel.Models;
 
 namespace WebHotel.Controllers
@@ -70,6 +71,18 @@ namespace WebHotel.Controllers
             ViewData["CustomerEmail"] = new SelectList(_context.Customer, "Email", "Email", booking.CustomerEmail);
             ViewData["RoomID"] = new SelectList(_context.Room, "ID", "ID", booking.RoomID);
             return View(booking);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Stats(CustomerStats s)
+        {
+            var postGroups = _context.Customer.GroupBy(m => m.Postcode);
+            var pStats = postGroups.Select(g => new CustomerStats { PostC = g.Key, PCCount = g.Count() });
+            ViewBag.cinfo = await pStats.ToListAsync();
+            var roomGroups = _context.Booking.GroupBy(m => m.RoomID);
+            var rStats = roomGroups.Select(g => new CustomerStats { roomID = g.Key, roomCount = g.Count() });
+            ViewBag.binfo = await rStats.ToListAsync();
+            return View(s);
         }
 
         // GET: Bookings/Edit/5

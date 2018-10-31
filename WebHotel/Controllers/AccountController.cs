@@ -231,7 +231,7 @@ namespace WebHotel.Controllers
                     await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
                     // add user to the role of Customers
-                    await _userManager.AddToRoleAsync(user, "Customers");
+                    //await _userManager.AddToRoleAsync(user, "Customers");
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");

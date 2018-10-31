@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model WebHotel.Models.CustomerStats
+@{
+    ViewData["Title"] = "Stats";
+}
+
+<h2>Customer distribution with respect to postcodes</h2>
+<table class="table">
+    <tr>
+        <th>
+            Postcode
+        </th>
+        <th>
+            Number of Customers
+        </th>
+    </tr>
+
+
+    @foreach (var item in ViewBag.cinfo)
+    {
+        <tr>
+            <td>
+                @item.PostC
+            </td>
+            <td>
+                @item.PCCount
+            </td>
+        </tr>
+    }
+</table>
+<h2>Booking distribution with respect to rooms</h2>
+<table class="table">
+    <tr>
+        <th>
+            Room ID
+        </th>
+        <th>
+            Number of bookings
+        </th>
+    </tr>
+
+
+    @foreach (var item in ViewBag.binfo)
+    {
+        <tr>
+            <td>
+                @item.roomID
+            </td>
+            <td>
+                @item.roomCount
+            </td>
+        </tr>
+    }
+</table>
