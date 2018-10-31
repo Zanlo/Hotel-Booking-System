@@ -5,7 +5,7 @@
 @inject UserManager<ApplicationUser> UserManager
 
 @{
-    ViewData["Title"] = "MyDetailsUpdate";
+    ViewData["Title"] = "My Details";
 }
 
 <h2>MyDetailsUpdate</h2>
@@ -17,7 +17,7 @@
         <form asp-action="MyDetailsUpdate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @* This hidden field is necessary, as the web form must contain it to
-                make all properties of the MovieGoer class present. *@
+                make all properties of the Customers class present. *@
             <input type="hidden" asp-for="Email" />
             <div class="form-group">
                 <label asp-for="Surname" class="control-label"></label>

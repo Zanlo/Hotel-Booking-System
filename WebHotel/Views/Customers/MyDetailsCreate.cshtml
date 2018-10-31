@@ -5,13 +5,13 @@
 @inject UserManager<ApplicationUser> UserManager
 
 @{
-    ViewData["Title"] = "MyDetailsCreate";
+    ViewData["Title"] = "My Details";
 }
 
-<h2>MyDetailsCreate</h2>
+<h2>My Details Create</h2>
 
 <h4>Welcome, @UserManager.GetUserName(User)! You should enter your details below before browsing other links. </h4>
-<hr />
+<br>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="MyDetailsCreate">

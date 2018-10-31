@@ -44,7 +44,7 @@ namespace WebHotel.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> MyDetailsCreate([Bind("Email,Surname,GiveName,Postcode")] Customer customer)
+        public async Task<IActionResult> MyDetailsCreate([Bind("Email,Surname,GivenName,Postcode")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace WebHotel.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> MyDetailsUpdate([Bind("Email,FirstName,LastName,Mobile")] Customer customer)
+        public async Task<IActionResult> MyDetailsUpdate([Bind("Email,Surname,GivenName,Postcode")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace WebHotel.Controllers
             return View(customer);
         }
 
-        private bool MovieGoerExists(string id)
+        private bool CustoemrExists(string id)
         {
             return _context.Customer.Any(e => e.Email == id);
         }
