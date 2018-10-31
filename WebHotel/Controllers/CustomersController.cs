@@ -9,9 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using WebHotel.Data;
 using WebHotel.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebHotel.Controllers
 {
+    [Authorize(Roles = "Customers")]
     public class CustomersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,148 +23,54 @@ namespace WebHotel.Controllers
             _context = context;
         }
 
-        // GET: Customers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> MyDetails()
         {
-            return View(await _context.Customer.ToListAsync());
-        }
+            string _email = User.FindFirst(ClaimTypes.Name).Value;
+            var customer = await _context.Customer.FindAsync(_email);
 
-        // GET: Customers/Details/5
-        public async Task<IActionResult> Details(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var customer = await _context.Customer
-                .SingleOrDefaultAsync(m => m.Email == id);
             if (customer == null)
             {
-                return NotFound();
+                customer = new Customer { Email = _email };
+                return View("~/Views/Customers/MyDetailsCreate.cshtml", customer);
             }
-
-            return View(customer);
+            else
+            {
+                return View("~/Views/Customers/MyDetailsUpdate.cshtml", customer);
+            }
         }
 
-        // GET: Customers/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Customers/Create
+        // POST: MovieGoers/MyDetailsCreate
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Email,Surname,GivenName,Postcode")] Customer customer)
+        public async Task<IActionResult> MyDetailsCreate([Bind("Email,Surname,GivenName,Postcode")] Customer customer)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                return View("~/Views/Customers/MyDetailsSuccess.cshtml", customer);
             }
             return View(customer);
         }
 
-        // GET: Customers/Edit/5
-        public async Task<IActionResult> Edit(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var customer = await _context.Customer.SingleOrDefaultAsync(m => m.Email == id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
-            return View(customer);
-        }
-
-        public async Task<IActionResult> MyDetails()
-        {
-            var user = User.FindFirst(ClaimTypes.Name).Value;
-            var userID = _context.Customer.FindAsync(user);
-
-            if (userID == null)
-            {
-                return View("~/Views/Customers/MyDetails/Create.cshtml",user);
-            }
-            else
-            {
-                return View("~/Views/Customers/MyDetails/Update.cshtml",user);
-            }
-        }
-
-        // POST: Customers/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Email,Surname,GivenName,Postcode")] Customer customer)
+        public async Task<IActionResult> MyDetailsUpdate([Bind("Email,Surname,GivenName,Postcode")] Customer customer)
         {
-            if (id != customer.Email)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(customer);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CustomerExists(customer.Email))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(customer);
+                await _context.SaveChangesAsync();
+
+                return View("~/Views/Customers/MyDetailsSuccess.cshtml", customer);
             }
             return View(customer);
         }
 
-        // GET: Customers/Delete/5
-        public async Task<IActionResult> Delete(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var customer = await _context.Customer
-                .SingleOrDefaultAsync(m => m.Email == id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
-
-            return View(customer);
-        }
-
-        // POST: Customers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
-        {
-            var customer = await _context.Customer.SingleOrDefaultAsync(m => m.Email == id);
-            _context.Customer.Remove(customer);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool CustomerExists(string id)
+        private bool CustoemrExists(string id)
         {
             return _context.Customer.Any(e => e.Email == id);
         }
