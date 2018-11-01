@@ -12,6 +12,7 @@ namespace WebHotel.Models
         public int ID { get; set; }
 
         // Foreign Key
+        [Range(1, 16)]
         public int RoomID { get; set; }
 
         // Foreign Key
