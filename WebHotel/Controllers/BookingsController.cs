@@ -21,6 +21,26 @@ namespace WebHotel.Controllers
             _context = context;
         }
 
+        public IActionResult BookARoom()
+        {
+            return View();
+        }
+
+        [Authorize(Roles ="Customers")]
+        public async Task<IActionResult> BookARoom([Bind("ID,RoomID,CheckIn,CheckOut")] Booking booking)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(booking);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["CustomerEmail"] = new SelectList(_context.Customer, "Email", "Email", booking.CustomerEmail);
+            ViewData["RoomID"] = new SelectList(_context.Room, "ID", "ID", booking.RoomID);
+            return View(booking);
+        }
+    
+
         [Authorize(Roles ="Customers")]
         public async Task<IActionResult> CIndex(string sortOrder)
         {
