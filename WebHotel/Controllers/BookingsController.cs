@@ -21,6 +21,45 @@ namespace WebHotel.Controllers
             _context = context;
         }
 
+
+        [Authorize(Roles ="Customers")]
+        public IActionResult BookARoom()
+        {
+            
+            ViewData["RoomID"] = new SelectList(_context.Room, "ID", "ID");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> BookARoom(ConfirmBookingModel confirm)
+        {
+            if (ModelState.IsValid)
+            {
+                var book = new Booking
+                {
+                    RoomID = confirm.RoomID,
+                    CustomerEmail = User.FindFirst(ClaimTypes.Name).Value,
+                    CheckIn = confirm.CheckIn,
+                    CheckOut = confirm.CheckOut
+                };
+
+                var theRooom = await _context.Room.FindAsync(confirm.RoomID);
+                book.Cost = theRooom.Price * (book.CheckOut - book.CheckIn).Days;
+
+                _context.Add(book);
+                await _context.SaveChangesAsync();
+
+                ViewBag.cost = book.Cost;
+                ViewBag.level = book.TheRoom.Level;
+                //return RedirectToAction(nameof(CIndex));
+            }
+            
+            ViewData["RoomID"] = new SelectList(_context.Room, "ID", "ID", confirm.RoomID);
+            return View(confirm);
+        }
+
+
         [Authorize(Roles ="Customers")]
         public async Task<IActionResult> CIndex(string sortOrder)
         {
