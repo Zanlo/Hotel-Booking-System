@@ -17,6 +17,14 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+  deploy:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "Test Deployment"
+          command: "echo This is a deployment"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
